@@ -46,6 +46,8 @@
            (om/set-query! ac
                           {:params {:query (.. e -target -value)}}))}))
 
+
+
 (defui AutoCompleter
   static om/IQueryParams
   (params [_]
@@ -63,6 +65,11 @@
                (cond->
                  [(search-field this (:query (om/get-params this)))]
                  (not (empty? results)) (conj (result-list results)))))))
+(defui Root
+  Object
+  (render [this]
+    (dom/div nil
+             ((om/factory AutoCompleter)))))
 
 (defn search-loop [c]
   (go
@@ -91,5 +98,5 @@
 
 (search-loop send-chan)
 
-(om/add-root! reconciler AutoCompleter
+(om/add-root! reconciler Root
               (gdom/getElement "omapp"))
