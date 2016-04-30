@@ -64,7 +64,9 @@
                (dom/h2 nil "Autocompleter")
                (cond->
                  [(search-field this (:query (om/get-params this)))]
-                 (not (empty? results)) (conj (result-list results)))))))
+                 (not (empty? results)) (conj (result-list results)))
+               (dom/div nil
+                 (dom/button #js {:onClick #(om/update-state! this :random/key "Random")} "X"))))))
 (defui Root
   Object
   (render [this]
