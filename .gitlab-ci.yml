@@ -1,0 +1,12 @@
+variables:
+  POSTGRES_DB: sample-test
+  DATABASE_URL: "postgresql://postgres@postgres:5432/sample-test"
+  JAVA_OPTS: "-XX:MaxPermSize=128m -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled"
+
+before_script:
+  - echo "Starting Test"
+  - bower install
+
+test:
+  script:
+    - boot test-all

@@ -1,0 +1,2 @@
+{:require  [booty.core]
+ :compiler-options {:asset-path "/main.out"}}

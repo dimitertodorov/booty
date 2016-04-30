@@ -1,0 +1,11 @@
+{
+  "name": "torcaui",
+  "authors": [
+    "Dimiter Todorov <dimiter.todorov@gmail.com>"
+  ],
+  "dependencies": {
+    "FortAwesome/Font-Awesome": "*",
+    "bootstrap" : "3.3.6",
+    "jquery" : "2.1.1"
+  }
+}
